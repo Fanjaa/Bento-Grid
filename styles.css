@@ -1,0 +1,458 @@
+:root {
+  --purple100: hsl(254, 88%, 90%);
+  --purple500: hsl(256, 67%, 59%);
+
+  --yellow100: hsl(31, 66%, 93%);
+  --yellow500: hsl(39, 100%, 71%);
+
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: #f7f6f7;
+  padding: 10px 200px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100%;
+  margin: 0;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  grid-template-areas: 
+    "col1 col2 col3"
+    "col1 col2 col3"
+    "col1 col4 col4"
+  ;
+}
+
+
+
+.grid-container > *, .inside-element {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.grid-element {
+  border-radius: 5px;
+}
+
+.inside-element {
+  grid-template-columns: 1fr 1fr;
+}
+
+.inside-element:nth-child(1){
+  grid-template-columns: 0.95fr 2fr;
+}
+.cols-one {
+  grid-area: col1;
+}
+
+.cols-two {
+  grid-area: col2;
+}
+
+.cols-three {
+  grid-area: col3;
+}
+
+.cols-four {
+  grid-area: col4;
+}
+
+img {
+  width: 100%;
+}
+
+
+p {
+  margin: 0;  
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow100);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.highlight-quicker {
+  color: var(--purple500);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.write {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow500);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.img-create-post, .img-write, .img-star {
+  margin-top: 20px;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple500);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.highlight-social {
+  color: var(--yellow500);
+  font-weight: 600;
+}
+
+.description-social {
+  font-size: 1rem;
+}
+
+.img-star {
+  width: 150px;
+}
+
+.manage {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.manage p { 
+  padding-top: 0.5rem;
+}
+
+.img-manage {
+  position: relative;
+  left: 1.5rem;
+}
+
+
+.maintain {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--yellow500);
+  font-size: 1.2rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.img-maintain {
+  position: relative;
+  bottom: -0.5rem;
+  margin-bottom: -4rem;
+
+}
+
+.schedule {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--purple100);
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1rem;
+  padding-top: 2rem;
+}
+
+.text-schedule {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.img-schedule {
+  position: relative;
+  left: 2rem; 
+  width: 150px;
+  padding-top: 1rem;  
+  padding-bottom: 1rem;
+}
+
+
+.faster {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+.faster p {
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.img-faster {
+  width: 120px;
+}
+
+.grow {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 1.4rem;
+  background-color: var(--purple500);
+  padding: 1rem;
+
+}
+
+.grow p {
+  padding-left: 1rem;
+}
+
+.img-grow {
+  width: 150px;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    padding: 10px 300px;
+  }
+
+  .write, .create, .social, .manage, .maintain, .schedule {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body {
+    padding: 10px 200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px 20px;
+  }
+
+  .grid-container {
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+  }
+
+  .grid-element {
+    border-radius: 10px;
+  }
+
+  .grid-container > * {
+    gap: 0.5rem;
+  
+  }
+
+  .inside-element {
+    gap: 0.5rem;
+  }
+
+  .write, .create, .manage, .maintain, .schedule {
+    font-size: 1.2rem;
+  }
+
+  .social {
+    padding:  1rem 1rem;
+    font-size: 1.8rem;
+  }
+
+  .img-star {
+    width: 100px;
+  }
+
+  .social p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+
+  .maintain, .manage {
+    font-size: 1rem;
+  }
+
+  
+  .schedule {
+    font-size: 1rem;
+    padding: 1rem;  
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  body {
+    padding: 0;
+  }
+
+  .grid-container {
+    margin: 0;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "col2"
+    "col3"
+    "col4"
+    "col1"
+    ;
+    padding: 20px 20px;
+  }
+
+  .grid-element {
+    border-radius: 10px;
+  }
+
+
+  .grid-container > * {
+    gap: 1.5rem;
+  }
+
+  .inside-element {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .inside-element:nth-child(1) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "grow"
+    "faster"
+    ;
+  }
+
+  .grow {
+    grid-area: grow;
+  }
+
+  .faster {
+    grid-area: faster;
+  }
+
+  .social {
+    padding: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .manage {
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  .img-manage {
+    left: 0;
+  }
+
+  .maintain {
+    font-size: 1.3rem;
+    height: 12rem;
+  }
+  
+  .img-maintain {
+    width: 70%;
+  }
+
+  .schedule {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .img-schedule {
+    width: 100%;
+    left: 0;
+  }
+
+  .text-schedule {
+    font-size: 18px;
+  }
+
+  .grow{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grow p {
+    padding: 0 2rem;
+  }
+
+  .img-grow {
+    padding: 1.5rem 0;  
+    width: 70%;
+  }
+
+  .faster p {
+    font-size: 18px;
+  }
+
+  .faster h1 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .img-faster {
+    width: 70%;
+  }
+
+  .create {
+    display: block;
+    padding: 20px;
+    font-size: 2rem;
+  }
+
+  .img-create-post {
+    width: 70%;
+  }
+
+  .write {
+    font-size: 2rem;
+    padding: 20px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .img-write {
+    width: 70%;
+  } 
+}
